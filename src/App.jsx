@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState } from 'react';
 import { interval, Observable, Subject, NEVER, BehaviorSubject } from 'rxjs';
-import { takeWhile, takeUntil, switchMap, repeatWhen, startWith } from 'rxjs/operators';
+import { takeWhile, takeUntil, switchMap, repeatWhen, startWith, map } from 'rxjs/operators';
 import formatsTime from './secondToForm';
 
 function App() {
@@ -11,11 +11,14 @@ function App() {
 
   const stopPlay$ = new Subject();
   // stopPlay$.subscribe(v => console.log('sub:', v));
-  const observable$ = interval(1000).pipe(takeUntil(stopPlay$));
+  const observable$ = interval(1000).pipe(
+    takeUntil(stopPlay$),
+    map(formatsTime),
+    );
 
   const handleStart = () => {
     setRun((prew) => !prew);
-      observable$.subscribe((v) => setTime(formatsTime(v)));
+      observable$.subscribe((v) => setTime(v));
       // if (run) {
       //   console.log('unsubscribe');
       //   stopPlay$.next();
