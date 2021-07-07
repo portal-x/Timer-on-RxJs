@@ -16,7 +16,6 @@ function Timer({ subscr }) {
   const [clickDate, setClickDate] = useState(Date.now());
   
   const { sub, setSub } = subscr;
-  
 
   const handleStart = () => {
     setRun((prew) => !prew);
