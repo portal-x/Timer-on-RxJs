@@ -1,3 +1,5 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/f1a2d6fd4fa5b9bf22e4/maintainability)](https://codeclimate.com/github/portal-x/itop/maintainability)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
