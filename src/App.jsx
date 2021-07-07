@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Timer from './timer.jsx';
+import Timer from './Timer.jsx';
 
 const App = () => {
   const [sub, setSub] = useState();
