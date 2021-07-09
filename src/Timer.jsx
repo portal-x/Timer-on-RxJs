@@ -13,7 +13,7 @@ const observable$ = interval(1000).pipe(
 function Timer({ subscr }) {
   const [time, setTime] = useState(0);
   const [run, setRun] = useState(false);
-  const [clickDate, setClickDate] = useState(Date.now());
+  // const [clickDate, setClickDate] = useState(Date.now());
   
   const { sub, setSub } = subscr;
 
@@ -28,10 +28,10 @@ function Timer({ subscr }) {
   };
   
   const handleWait = () => {
-    if(Date.now() - clickDate >= 300) {
-      setClickDate(Date.now());
-      return;
-    };
+    // if(Date.now() - clickDate >= 300) {
+    //   setClickDate(Date.now());
+    //   return;
+    // };
     wait$.next('wait');
     setRun((prew) => !prew);
   }
